@@ -10,8 +10,8 @@ router.get('/create', (req, res, next) => {
     res.render('create', { title: 'Create New Contact' });
 });
 
-router.post('/store', (req, res, next) => {
-    res.send(req.params);
+router.post('/store', function (req, res, next) {
+    res.send(req.body);
 });
 
 router.get('/edit/:contactId', (req, res, next) => {
