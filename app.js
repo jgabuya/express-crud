@@ -9,11 +9,11 @@ var index = require('./routes/index');
 var contacts = require('./routes/contacts');
 
 var app = express();
+var exphbs = require('express-handlebars');
 
 // view engine setup
-app.disable('view cache');
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
