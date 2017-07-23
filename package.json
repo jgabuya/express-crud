@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "NODE_ENV=development nodemon ./bin/www"
+    "start": "NODE_ENV=development nodemon -L ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.17.1",
@@ -11,6 +11,7 @@
     "debug": "~2.6.3",
     "express": "~4.15.2",
     "express-handlebars": "^3.0.0",
+    "mongodb": "^2.2.30",
     "morgan": "~1.8.1",
     "nocache": "^2.0.0",
     "serve-favicon": "~2.4.2"

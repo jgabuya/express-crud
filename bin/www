@@ -4,34 +4,45 @@
  * Module dependencies.
  */
 
-var app = require('../app');
 var debug = require('debug')('express-crud:server');
 var http = require('http');
+var app = require('../app');
+var db = require('../models/db');
 
 /**
- * Get port from environment and store in Express.
- */
-
+* Get port from environment and store in Express.
+*/
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 /**
  * Create HTTP server.
  */
-
 var server = http.createServer(app);
 
 /**
- * Listen on provided port, on all network interfaces.
+ * Connect to database
  */
+db.connect('mongodb://root:root@ds119223.mlab.com:19223/express_crud', (err) => {
+  if (err) {
+    console.log('Unable to connect to Mongo.')
+    process.exit(1)
+  } else {
+    console.log('connected to database');
+    
+    /**
+     * Listen on provided port, on all network interfaces.
+     */
+    server.listen(port);
+    server.on('error', onError);
+    server.on('listening', onListening);
+  }
+});
 
-server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
 
 /**
- * Normalize a port into a number, string, or false.
- */
+* Normalize a port into a number, string, or false.
+*/
 
 function normalizePort(val) {
   var port = parseInt(val, 10);

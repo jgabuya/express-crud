@@ -1,13 +1,24 @@
 <table class="table table-striped table-hover">
     <thead>
         <tr>
+            <th>ID</th>
             <th>Name</th>
             <th>Email</th>
             <th>Actions</th>
         </tr>
 
         <tbody>
-
+            {{#each contacts}}
+            <tr>
+                <td>{{_id}}</td>
+                <td>{{name}}</td>
+                <td>{{email}}</td>
+                <td>
+                    <a href="/contacts/edit/{{_id}}" class="btn btn-default btn-sm">Edit</a>
+                    <a href="/contacts/delete/{{_id}}" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+            {{/each}}
         </tbody>
     </thead>
 </table>
