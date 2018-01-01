@@ -1,16 +1,16 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var nocache = require('nocache');
+const express = require('express');
+const path = require('path');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const nocache = require('nocache');
 
-var index = require('./routes/index');
-var contacts = require('./routes/contacts');
+const index = require('./imports/routes/index');
+const contacts = require('./imports/routes/contacts');
 
-var app = express();
-var exphbs = require('express-handlebars');
+const app = express();
+const exphbs = require('express-handlebars');
 
 // view engine setup
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
@@ -30,7 +30,7 @@ app.use('/contacts', contacts);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
+  const err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
