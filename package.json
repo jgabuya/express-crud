@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "NODE_ENV=development nodemon -L ./bin/www",
-    "prettier-watch": "onchange '**/*.js' -- prettier --write {{changed}}"
+    "prettier-watch": "onchange '**/*.js' -- prettier --tab-width 4 --write {{changed}}"
   },
   "dependencies": {
     "body-parser": "~1.17.1",
