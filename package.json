@@ -16,7 +16,7 @@
     "morgan": "~1.8.1",
     "nocache": "^2.0.0",
     "nodemon": "^1.14.7",
-    "serve-favicon": "~2.4.2"
+    "serve-favicon": "~2.5.0"
   },
   "devDependencies": {
     "onchange": "^3.3.0",
