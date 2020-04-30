@@ -19,7 +19,7 @@
     "serve-favicon": "~2.5.0"
   },
   "devDependencies": {
-    "onchange": "^7.0.1",
+    "onchange": "^7.0.2",
     "prettier": "2.0.5"
   }
 }
